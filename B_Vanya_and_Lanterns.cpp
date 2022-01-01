@@ -44,11 +44,22 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
 
 
         void solve() {
+        int n,m;
+        cin>>n>>m;
+        vector<int>a(n);
+        iv(a,n);
+        sort(all(a));
+        int mx=(2*max(a[0],m-a[n-1]));
+        for(int i=0;i<n-1;i++){
+           mx=max(mx,a[i+1]-a[i]);
+        }
         
-            
+        double ans=(double)mx/2;
+        cout<<fixed<<setprecision(10)<<ans;
+
         }
 
-        int main() {
+        int32_t main() {
             ios_base::sync_with_stdio(0);
             cin.tie(0); cout.tie(0);
             int tc = 1;

@@ -1,7 +1,8 @@
 #include<bits/stdc++.h>
 #define all(x) x.begin(), x.end()
 #define allr(x) x.rbegin(), x.rend()
-#define ll long long
+#define int long long int
+#define inf LLONG_MAX
 #define mod 1e9+7
 #define MOD 998244353;
 #define vi vector<int>
@@ -13,11 +14,6 @@ void pv(vector<int> v){
     for(int i=0; i<v.size(); i++){
         cout << v[i] << ", ";
     }cout << "\n";
-}
-void iv(vector<int>& v,int n){
-    for(int i=0; i<n; i++){
-        cin>> v[i];
-    }
 }
 // Power under mod (a ^ b) % mod
 int modpow(int a, int b, int m = mod) {
@@ -44,15 +40,31 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
 
 
         void solve() {
+            int n;cin>>n;
+            vector<int>a(n);
+            map<int,int>mp;
+        for (int i = 0; i < n; i++)
+        {
+            cin>>a[i];mp[a[i]]++;    
+        }
+        int ans=0;
+        // auto it=mp;
+        for(auto it=mp.begin();it!=mp.end();it++){
+            if(it->first!=0 and it->second >=2){
+                ans+=2;
+            }
+            else ans++;
+        }
+        cout<<ans<<endl;
         
-            
+
         }
 
-        int main() {
+        int32_t main() {
             ios_base::sync_with_stdio(0);
             cin.tie(0); cout.tie(0);
             int tc = 1;
-            // cin >> tc;
+            cin >> tc;
             for (int t = 1; t <= tc; t++) {
                 // cout << "Case #" << t  << ": ";
                 solve();

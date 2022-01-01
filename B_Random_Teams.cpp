@@ -1,10 +1,12 @@
 #include<bits/stdc++.h>
 #define all(x) x.begin(), x.end()
 #define allr(x) x.rbegin(), x.rend()
-#define ll long long
+#define lli long long int
+#define inf LLONG_MAX
 #define mod 1e9+7
 #define MOD 998244353;
 #define vi vector<int>
+
 #define vp vector<pair<int, int>>
 #define vvi vector<vi>
 using namespace std;
@@ -13,11 +15,6 @@ void pv(vector<int> v){
     for(int i=0; i<v.size(); i++){
         cout << v[i] << ", ";
     }cout << "\n";
-}
-void iv(vector<int>& v,int n){
-    for(int i=0; i<n; i++){
-        cin>> v[i];
-    }
 }
 // Power under mod (a ^ b) % mod
 int modpow(int a, int b, int m = mod) {
@@ -41,14 +38,35 @@ int moddiv(int a, int b, int m = mod) { a = a % m; b = b % m; return (modmul(a, 
 vector<int> getvec(int n){vector<int> v(n);for(int i=0; i<n ;i++)cin>>v[i];return v;}
 vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (int i = 2; i <= n; i++)if (boolPrimeVec[i] == 0) {PrimeVec.push_back(i); for (int j = i*i; j <= n; j += i)boolPrimeVec[j] = 1;}}
  
-
+    lli ans(lli a){
+        return a*(a-1)/2;
+    }
 
         void solve() {
-        
-            
+      lli n,m;
+      cin>>n>>m;
+      lli p=n-(m-1);
+      lli mx=ans(p);
+      lli mi=0;
+      if(m==1){
+          mi=mx;
+      }
+      lli a=n/m;
+      lli b=n%m;
+
+
+     
+     mi = ans(a) * (m - b) + ans(a + 1) * b;
+    
+
+
+
+    
+    cout<<mi<<" "<<mx;
+
         }
 
-        int main() {
+        int32_t main() {
             ios_base::sync_with_stdio(0);
             cin.tie(0); cout.tie(0);
             int tc = 1;

@@ -44,15 +44,35 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
 
 
         void solve() {
+        int n;cin>>n;
+        vector<int>a(n);
+        vector<int>even;
+        vector<int>odd;
+        iv(a,n);
+
+        for (int i = 0; i < n; i++)
+        {
+            if(a[i]%2==0)even.push_back(a[i]);
+            else odd.push_back(a[i]);
+        }
+        for(int i=0;i<odd.size();i++){
+            cout<<odd[i]<<" ";
+        }
+        for(int i=0;i<even.size();i++){
+            cout<<even[i]<<" ";
+        }
+    cout<<"\n";
         
-            
+
+
+
         }
 
-        int main() {
+        int32_t main() {
             ios_base::sync_with_stdio(0);
             cin.tie(0); cout.tie(0);
             int tc = 1;
-            // cin >> tc;
+            cin >> tc;
             for (int t = 1; t <= tc; t++) {
                 // cout << "Case #" << t  << ": ";
                 solve();

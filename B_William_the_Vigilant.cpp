@@ -19,6 +19,15 @@ int main(){
         p--;
         int st = max(0, p - 2);
         int ed = min(n - 1, p + 2);
+        
+/*
+abcabcabc
+bbcabcabc
+bccabcabc
+bcaabcabc
+bcabbcabc
+
+*/
         for (int i = st + 1; i < ed; i++)
             if (s[i] == 'b' && s[i - 1] == 'a' && s[i + 1] == 'c')
                 cnt--;
@@ -32,3 +41,4 @@ int main(){
         cout<<cnt<<endl;
     }
 }
+
