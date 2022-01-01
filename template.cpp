@@ -14,7 +14,7 @@ void pv(vector<int> v){
         cout << v[i] << ", ";
     }cout << "\n";
 }
-void iv(vector<int>& v,int n){
+void iv(vector<int>&v,int n){
     for(int i=0; i<n; i++){
         cin>> v[i];
     }
