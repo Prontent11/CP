@@ -7,10 +7,6 @@
 #define vi vector<int>
 #define vp vector<pair<int, int>>
 #define vvi vector<vi>
-#define endl '\n'
-#define print(x) cout<<x
-#define fl(a,n) for(int i=a;i<n;i++)
-#define rl(i,m,n) for(int i=n;i>=m;i--)
 using namespace std;
  
 void pv(vector<int> v){
@@ -46,17 +42,31 @@ vector<int> getvec(int n){vector<int> v(n);for(int i=0; i<n ;i++)cin>>v[i];retur
 vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (int i = 2; i <= n; i++)if (boolPrimeVec[i] == 0) {PrimeVec.push_back(i); for (int j = i*i; j <= n; j += i)boolPrimeVec[j] = 1;}}
  
 
-
+    //cba
         void solve() {
-            
-            
+        int n;cin>>n;
+        string s;cin>>s;
+        int i=0;
+        while(true)
+        {   
+            if(s[i]>s[i+1]){
+                i++;
+            }
+            else if(i>0 and s[i]==s[i+1])i++;
+            else{
+                break;
+            }
+        }
+        string s1=s.substr(0,i+1);reverse(s1.begin(),s1.end());
+        cout<<s.substr(0,i+1)<<s1<<endl;
+        
         }
 
         int main() {
             ios_base::sync_with_stdio(0);
             cin.tie(0); cout.tie(0);
             int tc = 1;
-            // cin >> tc;
+            cin >> tc;
             for (int t = 1; t <= tc; t++) {
                 // cout << "Case #" << t  << ": ";
                 solve();

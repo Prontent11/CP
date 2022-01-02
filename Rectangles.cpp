@@ -7,10 +7,6 @@
 #define vi vector<int>
 #define vp vector<pair<int, int>>
 #define vvi vector<vi>
-#define endl '\n'
-#define print(x) cout<<x
-#define fl(a,n) for(int i=a;i<n;i++)
-#define rl(i,m,n) for(int i=n;i>=m;i--)
 using namespace std;
  
 void pv(vector<int> v){
@@ -48,7 +44,10 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
 
 
         void solve() {
-            
+            int n;cin>>n;
+            int ans=n/2;
+            cout<<n+(ans-1);
+
             
         }
 

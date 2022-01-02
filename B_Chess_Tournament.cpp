@@ -3,13 +3,13 @@
 #define allr(x) x.rbegin(), x.rend()
 #define ll long long
 #define mod 1e9+7
+#define print(x) cout<<x
 #define MOD 998244353;
 #define vi vector<int>
 #define vp vector<pair<int, int>>
 #define vvi vector<vi>
 #define endl '\n'
-#define print(x) cout<<x
-#define fl(a,n) for(int i=a;i<n;i++)
+#define fl(i,n) for(int i=0;i<n;i++)
 #define rl(i,m,n) for(int i=n;i>=m;i--)
 using namespace std;
  
@@ -48,6 +48,63 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
 
 
         void solve() {
+            int n;cin>>n;
+            string s;cin>>s;
+            map<char,int>mp;
+            for (int i = 0; i < n; i++)
+            {
+                mp[s[i]]++;
+            }
+                if(mp['2']==1 or mp['2']==2){
+                    cout<<"NO\n";return; }
+            cout<<"YES\n";
+            char ans[n][n];
+            for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                    ans[i][j]='0';
+                }
+                
+            }
+            bool check=true;
+            int l=1;
+            for (int i = 0; i < n; i++)
+            {   
+                check=true;
+                for (int j = 0; j < n; j++)
+                {
+                    if(i==j){
+                        ans[i][j]='X';
+                    }
+                    else if(s[i]=='1'){
+                        ans[i][j]='=';
+                        ans[j][i]='=';
+                    }
+                    else if(s[i]=='2'){
+                       
+                     if(ans[i][j]=='0')  { 
+                         if(check and s[j]=='2'){ans[i][j]='+';ans[j][i]='-';check=false;}
+                         else{ans[i][j]='-';ans[j][i]='+';}
+                        
+                    }}
+                }
+                
+            }
+              for (int i = 0; i < n; i++)
+            {
+                for (int j = 0; j < n; j++)
+                {
+                   cout<<ans[i][j];
+                }
+                cout<<endl;
+                
+            }
+            
+
+            
+            
+            
             
             
         }
@@ -56,7 +113,7 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
             ios_base::sync_with_stdio(0);
             cin.tie(0); cout.tie(0);
             int tc = 1;
-            // cin >> tc;
+            cin >> tc;
             for (int t = 1; t <= tc; t++) {
                 // cout << "Case #" << t  << ": ";
                 solve();

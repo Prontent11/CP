@@ -7,10 +7,6 @@
 #define vi vector<int>
 #define vp vector<pair<int, int>>
 #define vvi vector<vi>
-#define endl '\n'
-#define print(x) cout<<x
-#define fl(a,n) for(int i=a;i<n;i++)
-#define rl(i,m,n) for(int i=n;i>=m;i--)
 using namespace std;
  
 void pv(vector<int> v){
@@ -18,9 +14,10 @@ void pv(vector<int> v){
         cout << v[i] << ", ";
     }cout << "\n";
 }
-void iv(vector<int>&v,int n){
+void iv(vector<int>&v,int n,vector<int>&m,int k){
     for(int i=0; i<n; i++){
         cin>> v[i];
+        m[i]=v[i]%k;
     }
 }
 // Power under mod (a ^ b) % mod
@@ -48,7 +45,25 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
 
 
         void solve() {
+            int n,k;cin>>n>>k;
+            vector<int>a(n);
+            vector<int>m(n);
+            iv(a,n,m,k);
+            int ans=0;
+            set<int>s;
+            for (int i = 0; i < n; i++)
+            {   
+               int x=a[i]/k
+               s.insert(a[i]);
+
+                
+            }
+            cout<<ans<<endl;
             
+            
+            
+            
+           
             
         }
 

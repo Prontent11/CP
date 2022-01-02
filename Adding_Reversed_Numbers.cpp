@@ -7,10 +7,6 @@
 #define vi vector<int>
 #define vp vector<pair<int, int>>
 #define vvi vector<vi>
-#define endl '\n'
-#define print(x) cout<<x
-#define fl(a,n) for(int i=a;i<n;i++)
-#define rl(i,m,n) for(int i=n;i>=m;i--)
 using namespace std;
  
 void pv(vector<int> v){
@@ -35,7 +31,17 @@ int modpow(int a, int b, int m = mod) {
  
 // Inverse Mod (1 / a) % mod
 int modinv(int a, int m = mod) { return modpow(a, m - 2); }
- 
+ int reverse(int a){
+     int rev=0;
+    while(a!=0){
+
+     int rem=a%10;
+     
+     rev=rev*10+rem;
+     a/=10;
+    }
+    return rev;
+ }
 // Modular Arithematic
 int modadd(int a, int b, int m = mod) { a = a % m; b = b % m; return (((a + b) % m) + m) % m; }
 int modsub(int a, int b, int m = mod) { a = a % m; b = b % m; return (((a - b) % m) + m) % m; }
@@ -48,7 +54,12 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
 
 
         void solve() {
-            
+            int a,b;
+            cin>>a>>b;
+            a=reverse(a);
+            b=reverse(b);
+            cout<<reverse(a+b)<<"\n";
+
             
         }
 
@@ -56,7 +67,7 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
             ios_base::sync_with_stdio(0);
             cin.tie(0); cout.tie(0);
             int tc = 1;
-            // cin >> tc;
+            cin >> tc;
             for (int t = 1; t <= tc; t++) {
                 // cout << "Case #" << t  << ": ";
                 solve();

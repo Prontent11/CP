@@ -43,20 +43,29 @@ vector<bool>boolPrimeVec(1000001);vector<int> PrimeVec;void sieve(int n) {for (i
             int n;cin>>n;
             vector<int>a(n);
             map<int,int>mp;
+            set<int>s;
         for (int i = 0; i < n; i++)
         {
-            cin>>a[i];mp[a[i]]++;    
+            cin>>a[i];
+            if(mp[a[i]]>=1)a[i]=-a[i];
+            else mp[a[i]]++;
+            
+            
+
+            
+            
         }
+        sort(all(a));
         int ans=0;
-        // auto it=mp;
-        for(auto it=mp.begin();it!=mp.end();it++){
-            if(it->first!=0 and it->second >=2){
-                ans+=2;
+        for(int i=0;i<n;i++){
+            if( a[i]!=a[i+1]){
+                
+                ans++;
             }
-            else ans++;
         }
+ 
         cout<<ans<<endl;
-        
+
 
         }
 
